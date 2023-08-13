@@ -29,8 +29,15 @@ npm install -g ijavascript
 ijsinstall
 ```
 
+### Mac OS
+```zsh
+brew install node python jupyter
+npm install -g ijavascript
+ijsinstall
+```
+
 ## RUN
-### Windows
+### Windows, Mac OS
 ```cmd
-ijsnotebook --notebook-dir./
+ijsnotebook --notebook-dir ./
 ```
