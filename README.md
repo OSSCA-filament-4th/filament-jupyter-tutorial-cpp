@@ -2,42 +2,21 @@
 
 ----------------------------
 ## 단기목표
-filament.js를 jupyter notebook에 띄우기
+filament cpp를 jupyter notebook에 띄우기
 
 ## INSTALL
 
-### Windows
+### Only possible in Linux and OS X
 #### dependency (currently)
-`nodejs` `npm` `jupyter` [`ijavascript`](https://github.com/n-riesco/ijavascript#installation) 
+`xeus-cling` `jupyter` `notebook`
 
 ##### conda
 ```cmd
-conda install nodejs
+conda create -n oss xeus-cling
 pip3 install jupyter
-npm install -g ijavascript
-ijsinstall
-
-npm install filament
-```
-
-### Ubuntu
-##### apt-repo
-```bash
-sudo apt-get install nodejs npm jupyter
-npm config set prefix $HOME
-npm install -g ijavascript
-ijsinstall
-```
-
-### Mac OS
-```zsh
-brew install node python jupyter
-npm install -g ijavascript
-ijsinstall
 ```
 
 ## RUN
-### Windows, Mac OS
 ```cmd
-ijsnotebook --notebook-dir ./
+jupyter notebook
 ```
