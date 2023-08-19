@@ -16,6 +16,12 @@ conda create -n oss xeus-cling
 pip3 install jupyter
 ```
 
+## build
+```cmd
+mkdir build
+cmake ..
+```
+
 ## RUN
 ```cmd
 jupyter notebook
