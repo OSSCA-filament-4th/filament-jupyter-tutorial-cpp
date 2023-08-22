@@ -22,9 +22,35 @@ set(STATIC_LIBS
     libbackend
     libbluegl
     libbluevk
+    libcamutils
+    libcivetweb
+    libdracodec
+    libfilabridge
+    libfilaflat
+    libfilamat_lite
+    libfilamat
     libfilament
+    libfilament-iblprefilter
+    libfilameshio
+    libgeometry
+    libgltfio_core
+    libgltfio
+    libibl-lite
+    libibl
+    libimage
+    libktxreader
+    libmatdbg
+    libmeshoptimizer
+    libmikktspace
+    libshaders
+    libsmol-v
+    libstb
+    libuberarchive
+    libuberzlib
     libutils
-    # Add more static lib names as needed
+    libviewer
+    libvkshaders
+    libzstd
 )
 
 foreach(LIB ${STATIC_LIBS})
@@ -43,6 +69,7 @@ foreach(LIB ${STATIC_LIBS})
     # make shared library
     set(${TARGETS} ${TARGET_LIB}/*.o)
     add_library(${LIB} SHARED ${CMAKE_BINARY_DIR}/empty.cpp)
+    target_compile_features(${LIB} PRIVATE cxx_std_17)
     target_link_libraries(${LIB} ${TARGETS})
 
 endforeach()
