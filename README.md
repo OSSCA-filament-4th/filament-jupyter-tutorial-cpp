@@ -25,6 +25,7 @@ xeus-cling은 shared library(.so) 파일만 임포트할 수 있습니다. 현�
 mkdir build
 cd build
 cmake ..
+make
 ```
 
 ## RUN
