@@ -59,10 +59,14 @@ foreach(LIB ${STATIC_LIBS})
     set(TARGET_LIB ${FILAMENT_DIR}/${LIB})
 
     # make tmp directy and run archive
-    add_custom_target(${LIB}_shared ALL
+    add_custom_target(${LIB}_make_directory ALL
         COMMAND ${CMAKE_COMMAND} -E make_directory ${TARGET_LIB}
-        COMMAND ${CMAKE_AR} -x ${TARGET_LIB}.a --output ${TARGET_LIB}
-        # COMMAND ${CMAKE_C_COMPILER} -shared -o ${TARGET_LIB}.so ${TARGET_LIB}/*.o
+    )
+    add_custom_target(${LIB}_shared ALL
+        WORKING_DIRECTORY ${TARGET_LIB}
+        COMMAND ${CMAKE_AR} -x ${TARGET_LIB}.a 
+    )
+    add_custom_target(${LIB}_clean ALL
         COMMAND ${CMAKE_COMMAND} -E remove_directory ${TARGET_LIB}
     )
 
