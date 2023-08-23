@@ -20,7 +20,7 @@ pip3 install jupyter
 
 @@TODO check whether none-dev version is possible or not
 ```cmd
-sudo apt get install clang-12 libc++-12-dev libc++abi-12-dev
+sudo apt get install clang-12 libc++-12-dev libc++abi-12-dev libunwind-dev
 ```
 
 ## BUILD
