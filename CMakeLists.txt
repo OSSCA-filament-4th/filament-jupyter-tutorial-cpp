@@ -4,7 +4,7 @@ project(lib_converter)
 
 # cmake options
 set(CMAKE_SHARED_LIBRARY_PREFIX "")
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/shared_lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 # clang options
 set(CMAKE_CXX_COMPILER "clang++-12")
