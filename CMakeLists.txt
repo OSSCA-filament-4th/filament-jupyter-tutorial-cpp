@@ -103,9 +103,9 @@ function(make_shared lib)
             )
     endif()
 
-    add_custom_target(${lib}_clean ALL
-        COMMAND ${CMAKE_COMMAND} -E remove_directory ${target_lib}
-    )   
+    # add_custom_target(${lib}_clean ALL
+    #     COMMAND ${CMAKE_COMMAND} -E remove_directory ${target_lib}
+    # )   
 
 endfunction()
 
@@ -113,6 +113,16 @@ find_package(Cling REQUIRED)
 
 make_shared(libbluegl)
 make_shared(libbluevk)
-make_shared(libutils)
+make_shared(libutils dl)
 make_shared(libbackend bluevk bluegl)
 make_shared(libfilament utils)
+
+
+add_library(libfilament SHARED IMPORTED)
+set_target_properties(libfilament PROPERTIES
+    IMPORTED_LOCATION ${CMAKE_BINARY_DIR}/libfilament.so
+    INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/filament/include
+)
+
+add_executable(app app.cpp)
+target_link_libraries(app libfilament)
