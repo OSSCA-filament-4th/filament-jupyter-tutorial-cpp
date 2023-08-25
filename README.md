@@ -35,8 +35,9 @@ export CXX=$YOUR_CLANG++12_PATH
 
 ```cmd
 mkdir build && cd build
-cmake .. -G Ninja
+cmake .. -G Ninja -DCMAKE_INSTALL_PREFIX=.
 ninja
+cmake --install .
 ```
 
 ## RUN
