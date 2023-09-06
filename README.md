@@ -9,13 +9,13 @@ filament cpp를 jupyter notebook에 띄우기
 
 - [conda installation guide](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
 
-`conda` `xeus-cling` `jupyter` `notebook` `filament` <br>
+`conda` `xeus-cling` `jupyter` `notebook` `filament` `ipycanvas` <br>
 The release version google filament is already included in the current repository. 
 Because we depend on `xeus-cling`, the examples are only possible in the following platform, Linux, WSL.
 
 ```cmd
-conda create -n oss xeus-cling -c conda-forge
-pip3 install jupyter
+conda create -n oss xeus-cling xcanvas -c conda-forge
+pip3 install jupyter ipycanvas ipywidgets
 ```
 
 @@TODO check whether none-dev version is possible or not
