@@ -1,3 +1,7 @@
 [submodule "filament"]
-	path = filament
+	path = ext/filament
 	url = https://github.com/hyeonjang/filament.git
+
+[submodule "json"]
+	path = ext/json
+	url = https://github.com/nlohmann/json.git
